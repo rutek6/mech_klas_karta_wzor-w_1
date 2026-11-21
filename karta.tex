@@ -1,0 +1,58 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+
+\usepackage{multicol}
+\usepackage{amsbsy, amssymb, latexsym, amsmath, braket}
+\usepackage[tiny]{titlesec}
+\usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{scalefnt}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\usepackage{commath}
+\titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing*{\subsection}{0pt}{10pt plus 2pt minus 2pt}{4pt plus 2pt minus 2pt}
+
+\title{Karta wzorów - Mechanika Klasyczna (1)}
+
+
+\begin{document}
+\scalefont{.70}
+
+\section{Układy}
+\subsection{Biegunowy}
+$r = r \hat e_r = x \hat e_x + y \hat e_y$ \\
+$\hat e_r = \left(\cos\varphi\right) \hat e_x + \left(\sin\varphi\right) \hat e_y$ \\
+$\hat e_{\varphi} = - \left(\sin\varphi\right)\hat e_x + \left(\cos\varphi\right) \hat e_y$ \\
+$v = \dot r \hat e_r + r \dot\varphi \hat e_{\varphi}$ \\
+$a = \left(\ddot r - r {\dot \varphi}^2\right) \hat e_r 
+    + \left(r \ddot\varphi + 2\dot r \dot\varphi\right) \hat e_{\varphi}$
+\subsection{Sferyczny}
+$r = r \hat e_r = x \hat e_x + y \hat e_y + z \hat e_z$ \\
+$\hat e_r = \left(\sin\theta \cos\varphi\right) \hat e_x + \left(\sin\theta \sin\varphi\right) \hat e_y + \left(\cos\theta\right)\hat e_z$ \\
+$\hat e_{\theta} = \left(\cos\theta \cos\varphi \right)\hat e_x + \left(\cos\theta \sin\varphi\right) \hat e_y -\left(\sin\theta\right) \hat e_z$\\
+$\hat e_{\varphi} = - \left(\sin\varphi\right)\hat e_x + \left(\cos\varphi\right) \hat e_y$ \\
+$v = \dot r \hat e_r + r \dot\theta \hat e_{\theta} + r \sin\left(\theta\right) \dot\varphi \hat e_{\varphi}$ \\
+$a = (\ddot r - r {\dot \theta}^2 - r \sin^2\left(\theta\right) {\dot \varphi}^2) \hat e_r + (2\dot r \dot \theta + r\ddot\theta - r \sin\left(\theta\right) \cos\left(\theta\right){\dot\varphi}^2) \hat e_{\theta} + (r \sin\left(\theta\right) \ddot\varphi + 2\dot r \sin\left(\theta\right) \dot\varphi) \hat e_{\varphi}$ \\
+
+\section{Oscylator harmoniczny}
+$\ddot x + 2\omega_0 \gamma \dot x + {\omega_0}^2 x = f_0 \cos \left(\omega t \right)$ \\
+RORJ: \\
+$\gamma = 0 \implies x(t) = A \cos\left(\omega_0 t\right) + B \sin \left(\omega_0 t\right) $\\
+$\gamma > 1 \implies x(t) = A e^{-\omega_0 \left(\gamma + \sqrt{\gamma^2 - 1}\right)t} + B e^{-\omega_0 \left(\gamma - \sqrt{\gamma^2 - 1}\right)t}$ \\
+$\gamma < 1 \implies x(t) = e^{-\omega_0 \gamma t} \left(A\cos\left(\omega_0 \sqrt{1-\gamma^2}t\right) + B\sin\left(\omega_0 \sqrt{1-\gamma^2}t\right)\right)$ \\
+$\gamma = 0 \implies x(t) = (A+Bt) e^{-\gamma \omega_0 t}$ \\
+
+\section{Transformacja między ukł. inercj. a nieinercj.}
+$\vec{a'} = \vec{a} - \vec{\Delta a} - \frac{\text{d}\vec{\Omega}}{\text{d}t} \times \vec{r'} - \vec{\Omega} \times \left(\vec{\Omega} \times \vec{r'}\right) - 2\vec{\Omega}\times \vec{v'}$ \\
+$\vec{\Delta a}$ - Przyspieszenie początku układu nieinercj. \\
+$2\vec{\Omega}\times \vec{v'}$ - Przyspieszenie Coriolisa \\
+$\vec{\Omega} \times \left(\vec{\Omega} \times \vec{r'}\right)$ - Przyspieszenie Odśrodkowe \\
+$\frac{\text d \vec{\Omega}}{\text dt} \times \vec{r'}$ - Przyspieszenie Eulera 
+
+\section{Grawitacja}
+$F = G \frac{mM}{r^2}$ - Prawo Powszechnego Ciążenia
+
+\section{Trygonometria :/}
+
+
+\end{document}
