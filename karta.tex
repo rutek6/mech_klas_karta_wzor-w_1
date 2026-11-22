@@ -18,21 +18,40 @@
 \begin{document}
 \scalefont{.70}
 
-\section{Układy}
+\section{Układy i kinematyka}
 \subsection{Biegunowy}
-$r = r \hat e_r = x \hat e_x + y \hat e_y$ \\
+$\vec r = r \hat e_r = x \hat e_x + y \hat e_y$ \\
 $\hat e_r = \left(\cos\varphi\right) \hat e_x + \left(\sin\varphi\right) \hat e_y$ \\
 $\hat e_{\varphi} = - \left(\sin\varphi\right)\hat e_x + \left(\cos\varphi\right) \hat e_y$ \\
+$\dot{\hat e}_r = \dot\varphi\,\hat e_\varphi, \qquad \dot{\hat e}_\varphi = -\dot\varphi\,\hat e_r$ \\
 $v = \dot r \hat e_r + r \dot\varphi \hat e_{\varphi}$ \\
 $a = \left(\ddot r - r {\dot \varphi}^2\right) \hat e_r 
     + \left(r \ddot\varphi + 2\dot r \dot\varphi\right) \hat e_{\varphi}$
 \subsection{Sferyczny}
-$r = r \hat e_r = x \hat e_x + y \hat e_y + z \hat e_z$ \\
+$\vec r = r \hat e_r = x \hat e_x + y \hat e_y + z \hat e_z$ \\
 $\hat e_r = \left(\sin\theta \cos\varphi\right) \hat e_x + \left(\sin\theta \sin\varphi\right) \hat e_y + \left(\cos\theta\right)\hat e_z$ \\
 $\hat e_{\theta} = \left(\cos\theta \cos\varphi \right)\hat e_x + \left(\cos\theta \sin\varphi\right) \hat e_y -\left(\sin\theta\right) \hat e_z$\\
 $\hat e_{\varphi} = - \left(\sin\varphi\right)\hat e_x + \left(\cos\varphi\right) \hat e_y$ \\
+$\dot{\hat e}_r = \dot\theta\,\hat e_\theta + \dot\varphi\sin\theta\,\hat e_\varphi$ \\
+$\dot{\hat e}_\theta = -\dot\theta\,\hat e_r + \dot\varphi\cos\theta\,\hat e_\varphi$ \\
+$\dot{\hat e}_\varphi = -\dot\varphi(\sin\theta\,\hat e_r + \cos\theta\,\hat e_\theta)$\\
 $v = \dot r \hat e_r + r \dot\theta \hat e_{\theta} + r \sin\left(\theta\right) \dot\varphi \hat e_{\varphi}$ \\
-$a = (\ddot r - r {\dot \theta}^2 - r \sin^2\left(\theta\right) {\dot \varphi}^2) \hat e_r + (2\dot r \dot \theta + r\ddot\theta - r \sin\left(\theta\right) \cos\left(\theta\right){\dot\varphi}^2) \hat e_{\theta} + (r \sin\left(\theta\right) \ddot\varphi + 2\dot r \sin\left(\theta\right) \dot\varphi) \hat e_{\varphi}$ \\
+$a = (\ddot r - r {\dot \theta}^2 - r \sin^2\left(\theta\right) {\dot \varphi}^2) \hat e_r + (2\dot r \dot \theta + r\ddot\theta - r \sin\left(\theta\right) \cos\left(\theta\right){\dot\varphi}^2) \hat e_{\theta} + (r \sin\left(\theta\right) \ddot\varphi + 2\dot r \sin\left(\theta\right) \dot\varphi + 2r\dot\theta \dot\varphi \cos\left(\theta\right)) \hat e_{\varphi}$ \\
+
+\subsection{Układ nieinercj. i ruch po okręgu}
+$a_t = \frac{\vec v \cdot \vec a}{v}$ - składowa styczna 
+$a_n = \frac{\left|\vec v\times \vec a\right|}{v} = \frac{v^2}{R_{krz}}$ - składowa norm. \\
+$\vec{a'} = \vec{a} - \vec{\Delta a} - \frac{\text{d}\vec{\Omega}}{\text{d}t} \times \vec{r'} - \vec{\Omega} \times \left(\vec{\Omega} \times \vec{r'}\right) - 2\vec{\Omega}\times \vec{v'}$ \\
+$\vec{\Delta a}$ - Przyspieszenie początku układu nieinercj. \\
+$2\vec{\Omega}\times \vec{v'}$ - Przyspieszenie Coriolisa \\
+$\vec{\Omega} \times \left(\vec{\Omega} \times \vec{r'}\right)$ - Przyspieszenie Odśrodkowe \\
+$\frac{\text d \vec{\Omega}}{\text dt} \times \vec{r'}$ - Przyspieszenie Eulera \\
+$\vec v' = \vec v - \Delta \vec v - \vec\Omega \times \vec r'$ \\
+$\Delta \vec v$ - Prędkość początku układu. \\
+$\frac{\text d\vec B}{\text d t} = \frac{\text d' \vec B}{\text d t} + \vec \Omega \times \vec B$ - Pochodna wektora w układzie inercj i nieinercj.\\
+Ziemia: $x$ - wschód, $y$ - północ, $z$ - góra, $\varphi$ - szeokość geogr.\\
+$\vec\Omega = \Omega(0,\cos\varphi,\sin\varphi), \qquad \vec\Omega\times\vec v = \Omega\,(v_z\cos\varphi - v_y\sin\varphi,\; v_x\sin\varphi,\; -v_x\cos\varphi)$
+
 
 \section{Oscylator harmoniczny}
 $\ddot x + 2\omega_0 \gamma \dot x + {\omega_0}^2 x = f_0 \cos \left(\omega t \right)$ \\
@@ -40,19 +59,70 @@ RORJ: \\
 $\gamma = 0 \implies x(t) = A \cos\left(\omega_0 t\right) + B \sin \left(\omega_0 t\right) $\\
 $\gamma > 1 \implies x(t) = A e^{-\omega_0 \left(\gamma + \sqrt{\gamma^2 - 1}\right)t} + B e^{-\omega_0 \left(\gamma - \sqrt{\gamma^2 - 1}\right)t}$ \\
 $\gamma < 1 \implies x(t) = e^{-\omega_0 \gamma t} \left(A\cos\left(\omega_0 \sqrt{1-\gamma^2}t\right) + B\sin\left(\omega_0 \sqrt{1-\gamma^2}t\right)\right)$ \\
-$\gamma = 0 \implies x(t) = (A+Bt) e^{-\gamma \omega_0 t}$ \\
+$\gamma = 1 \implies x(t) = (A+Bt) e^{-\gamma \omega_0 t}$ \\
+Małe drgania wokół minimum potencjału:
+$V(x) \approx V(x_0) + \frac1 2 V''(x_0)(x-x_0)^2$
 
-\section{Transformacja między ukł. inercj. a nieinercj.}
-$\vec{a'} = \vec{a} - \vec{\Delta a} - \frac{\text{d}\vec{\Omega}}{\text{d}t} \times \vec{r'} - \vec{\Omega} \times \left(\vec{\Omega} \times \vec{r'}\right) - 2\vec{\Omega}\times \vec{v'}$ \\
-$\vec{\Delta a}$ - Przyspieszenie początku układu nieinercj. \\
-$2\vec{\Omega}\times \vec{v'}$ - Przyspieszenie Coriolisa \\
-$\vec{\Omega} \times \left(\vec{\Omega} \times \vec{r'}\right)$ - Przyspieszenie Odśrodkowe \\
-$\frac{\text d \vec{\Omega}}{\text dt} \times \vec{r'}$ - Przyspieszenie Eulera 
-
-\section{Grawitacja}
-$F = G \frac{mM}{r^2}$ - Prawo Powszechnego Ciążenia
-
-\section{Trygonometria :/}
+\section{Zasady zachowania}
+$\vec L = \vec r \times \vec p \qquad \dot{\vec L} = \vec M = \vec r \times \vec F \qquad \vec F = -\nabla{V} \qquad E = T + V$ \\
+Siła jest zachowawcza gdy $\nabla \times F = 0$ \\ 
+\\Układ punktów:\\
+$\vec R$ - środek masy, $\vec P$ - całk. pęd \\
+$L_{SM}$ - moment pędu wzgl ŚM, $T_{SM}$ - energ. kinet. ruchu wzgl. ŚM. \\
+$\vec R = \frac{1}{M}\sum_i m_i \vec r_i \qquad \vec P = M \dot{\vec R} \qquad \vec L = \vec R \times \vec P + \vec L_{SM} \qquad T = \frac1 2 M \dot R^2 + T_{SM}$ 
 
 
+
+\section{Problem dwóch ciał i pole centralne}
+$F = G \frac{mM}{r^2}$ - Prawo Powszechnego Ciążenia \\
+Redukcja do jednego ciała:
+$\vec r = \vec r_1 - \vec r_2, \qquad \mu = \frac{m_1 m_2}{m_1+m_2}$ \\
+$V_{eff} = V(r) + \frac{L^2}{2\mu r^2}$ - Energ. potencj. efekt. \\
+$E = \frac1 2 \mu \dot r^2 + V_{eff}(r)$ - Energ. całk.\\
+$L = \mu r^2 \dot \varphi = const$ \\
+$F(r) = \mu \left(\ddot r - r \dot \varphi^2\right)$\\
+$V'_{ef}(r_0) = 0 \iff \frac{L^2}{\mu r_0^3} = V'(r_0) \iff$ Orbita jest kołowa \\
+Orbita kołowa jest stabilna, jeśli $V''_{ef}(r_0) > 0$ \\
+Oscylacje przy stabilnej orbicie, bo: \\
+$\mu \ddot x = -V'_{ef}(r_0 + x) \approx -V'_{ef}(r_0) - V''_{ef}(r_0)x = -V''_{ef}(r_0)x$\\
+$V''_{ef}(r_0) > 0 \iff$ rów. osc. harm, gdzie $\omega_r = \sqrt{V''_{ef}(r_0)/\mu}$ \\ 
+$V''_{ef}(r_0) < 0 \iff$ rów. postaci: $\ddot x = \lambda^2 x$, $x \sim e^{\lambda t}$ \\
+\\
+Równanie bineta: $w = \frac{1}{r}$ i $w' = \frac{\text d}{\text d \varphi}\left(\frac 1 r\right)$:\\
+$w'' + w = - \frac{\mu}{L^2 w^2}F(\frac{1}{w})$ \\
+Energia zapisana przez $w$:
+$E = \frac{L^2}{2\mu}\left({w'}^2 + w^2\right) + V(\frac1 w)$
+
+\subsection{Problem Keplera}
+$V = -\frac{\alpha}{r} \qquad \alpha = Gm_1 m_2$ \\
+$r = \frac{p}{1 + \epsilon \cos\left(\varphi - \varphi_0\right)}$\\
+$\epsilon = 0$ - okrąg, $\epsilon < 1$ - elipsa,  $\epsilon = 1$ - parabola, $\epsilon > 1$ - hiperbola\\
+$\epsilon = \sqrt{1 + \frac{2E L^2}{\mu \alpha^2}} \qquad p = \frac{L^2}{\mu \alpha}$
+
+\section{Matma :/}
+\[
+\begin{gathered}
+\sin(a\pm b) = \sin a\cos b \pm \cos a\sin b, \qquad \cos(a\pm b) = \cos a\cos b \mp \sin a\sin b \\
+\cos^2x = \frac{1+\cos 2x}{2}, \qquad \sin^2x = \frac{1-\cos 2x}{2} \\
+A\cos x + B\sin x = \sqrt{A^2+B^2}\,\cos(x-\delta), \qquad \tan\delta = \frac{B}{A}
+\end{gathered}
+\]
+$\cosh^2x - \sinh^2x = 1, \qquad \mathrm{arcosh}\,x = \ln\left(x+\sqrt{x^2-1}\right)$ \\
+$\vec a\times(\vec b\times\vec c) = \vec b(\vec a\cdot\vec c) - \vec c(\vec a\cdot\vec b), \qquad \vec\Omega\times(\vec\Omega\times\vec r) = -\Omega^2\vec r_\perp$
+
+\[
+\int\frac{dx}{\sqrt{a^2-x^2}} = \arcsin\frac{x}{a}, \qquad \int\frac{dx}{\sqrt{x^2\pm a^2}} = \ln\left|x+\sqrt{x^2\pm a^2}\right|, \qquad \int\frac{dx}{a^2+x^2} = \frac1a\arctan\frac{x}{a}
+\]
+
+\[(1+x)^n\approx 1+nx, \qquad \sin(\theta_0+\delta)\approx\sin\theta_0 + \delta\cos\theta_0\]
+$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+     = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2}f''(x_0)(x-x_0)^2 + \dots$ \\
+$V(x) \approx V(x_0) + \frac{1}{2}V''(x_0)(x-x_0)^2$ (w min.\ $V'(x_0)=0$), $\ \omega = \sqrt{V''(x_0)/m}$ \\
+$f(\vec r + \vec a) \approx f(\vec r) + \vec a \cdot \nabla f(\vec r)$ \\
+$(1+x)^n \approx 1 + nx + \frac{n(n-1)}{2}x^2$ \\
+$\sin x \approx x - \frac{x^3}{6}, \quad \cos x \approx 1 - \frac{x^2}{2}, \quad \tan x \approx x + \frac{x^3}{3}$ \\
+$e^x \approx 1 + x + \frac{x^2}{2}, \quad \ln(1+x) \approx x - \frac{x^2}{2}$ \\
+$\sinh x \approx x, \quad \cosh x \approx 1 + \frac{x^2}{2}$ \\
+$\sin(\theta_0+\delta) \approx \sin\theta_0 + \delta\cos\theta_0, \quad
+ \cos(\theta_0+\delta) \approx \cos\theta_0 - \delta\sin\theta_0$
 \end{document}
