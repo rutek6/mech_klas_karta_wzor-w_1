@@ -56,12 +56,18 @@ $\vec\Omega = \Omega(0,\cos\varphi,\sin\varphi), \qquad \vec\Omega\times\vec v =
 \section{Oscylator harmoniczny}
 $\ddot x + 2\omega_0 \gamma \dot x + {\omega_0}^2 x = f_0 \cos \left(\omega t \right)$ \\
 RORJ: \\
-$\gamma = 0 \implies x(t) = A \cos\left(\omega_0 t\right) + B \sin \left(\omega_0 t\right) $\\
+$m\ddot x = -kx - b\dot x \Rightarrow \omega_0^2 = \frac km,\ 2\gamma\omega_0 = \frac bm$ \\
+\\
+$\gamma = 0 \implies x(t) = A \cos\left(\omega_0 t\right) + B \sin \left(\omega_0 t\right)$ \\
 $\gamma > 1 \implies x(t) = A e^{-\omega_0 \left(\gamma + \sqrt{\gamma^2 - 1}\right)t} + B e^{-\omega_0 \left(\gamma - \sqrt{\gamma^2 - 1}\right)t}$ \\
 $\gamma < 1 \implies x(t) = e^{-\omega_0 \gamma t} \left(A\cos\left(\omega_0 \sqrt{1-\gamma^2}t\right) + B\sin\left(\omega_0 \sqrt{1-\gamma^2}t\right)\right)$ \\
 $\gamma = 1 \implies x(t) = (A+Bt) e^{-\gamma \omega_0 t}$ \\
+\\
+$\gamma<1$: $\omega_d = \omega_0\sqrt{1-\gamma^2}$, $A = x_0$, $B = \frac{v_0+\gamma\omega_0x_0}{\omega_d}$ \\
+RSRN: $x_p = \frac{f_0\cos(\omega t-\delta)}{\sqrt{(\omega_0^2-\omega^2)^2+4\gamma^2\omega_0^2\omega^2}}$, $\tan\delta = \frac{2\gamma\omega_0\omega}{\omega_0^2-\omega^2}$, $\omega_{rez} = \omega_0\sqrt{1-2\gamma^2}$ \\
+\\ \\
 Małe drgania wokół minimum potencjału:
-$V(x) \approx V(x_0) + \frac1 2 V''(x_0)(x-x_0)^2$
+$V(x) \approx V(x_0) + \frac1 2 V''(x_0)(x-x_0)^2$\\
 
 \section{Zasady zachowania}
 $\vec L = \vec r \times \vec p \qquad \dot{\vec L} = \vec M = \vec r \times \vec F \qquad \vec F = -\nabla{V} \qquad E = T + V$ \\
@@ -70,7 +76,7 @@ Siła jest zachowawcza gdy $\nabla \times F = 0$ \\
 $\vec R$ - środek masy, $\vec P$ - całk. pęd \\
 $L_{SM}$ - moment pędu wzgl ŚM, $T_{SM}$ - energ. kinet. ruchu wzgl. ŚM. \\
 $\vec R = \frac{1}{M}\sum_i m_i \vec r_i \qquad \vec P = M \dot{\vec R} \qquad \vec L = \vec R \times \vec P + \vec L_{SM} \qquad T = \frac1 2 M \dot R^2 + T_{SM}$ 
-
+$M\ddot{\vec R} = \vec F_{zewn}, \qquad \dot{\vec L} = \vec M_{zewn}, \qquad \frac{\text dS}{\text dt} = \frac{L}{2\mu}$
 
 
 \section{Problem dwóch ciał i pole centralne}
@@ -87,6 +93,9 @@ Oscylacje przy stabilnej orbicie, bo: \\
 $\mu \ddot x = -V'_{ef}(r_0 + x) \approx -V'_{ef}(r_0) - V''_{ef}(r_0)x = -V''_{ef}(r_0)x$\\
 $V''_{ef}(r_0) > 0 \iff$ rów. osc. harm, gdzie $\omega_r = \sqrt{V''_{ef}(r_0)/\mu}$ \\ 
 $V''_{ef}(r_0) < 0 \iff$ rów. postaci: $\ddot x = \lambda^2 x$, $x \sim e^{\lambda t}$ \\
+$\vec r_1 = \vec R + \frac{m_2}{M}\vec r$, $\ \vec r_2 = \vec R - \frac{m_1}{M}\vec r$ \\
+$t = \int\frac{\text dr}{\sqrt{\frac2\mu(E-V_{eff})}}$, $\ \varphi = \int\frac{L\,\text dr}{r^2\sqrt{2\mu(E-V_{eff})}}$ \\
+$V''_{ef}(r_0) = V''(r_0) + \frac{3V'(r_0)}{r_0}$, $\ \dot\varphi_0 = \frac{L}{\mu r_0^2}$, $\ E_0 = V_{ef}(r_0)$ \\
 \\
 Równanie bineta: $w = \frac{1}{r}$ i $w' = \frac{\text d}{\text d \varphi}\left(\frac 1 r\right)$:\\
 $w'' + w = - \frac{\mu}{L^2 w^2}F(\frac{1}{w})$ \\
@@ -98,6 +107,18 @@ $V = -\frac{\alpha}{r} \qquad \alpha = Gm_1 m_2$ \\
 $r = \frac{p}{1 + \epsilon \cos\left(\varphi - \varphi_0\right)}$\\
 $\epsilon = 0$ - okrąg, $\epsilon < 1$ - elipsa,  $\epsilon = 1$ - parabola, $\epsilon > 1$ - hiperbola\\
 $\epsilon = \sqrt{1 + \frac{2E L^2}{\mu \alpha^2}} \qquad p = \frac{L^2}{\mu \alpha}$
+\\
+$a = \frac{p}{1-\epsilon^2} = \frac{\alpha}{2|E|}$, $b = \frac{p}{\sqrt{1-\epsilon^2}}$, $r_{min,max} = \frac{p}{1\pm\epsilon}$, $E_{min} = -\frac{\mu\alpha^2}{2L^2}$ \\
+$T^2 = \frac{4\pi^2a^3}{G(m_1+m_2)}$, $v^2 = GM\left(\frac2r - \frac1a\right)$, $v_{kol} = \sqrt{\frac{GM}{r}}$, $v_{ucieczki} = \sqrt{\frac{2GM}{r}}$ \\
+Runge--Lenz: $\vec A = \vec v\times\vec L - \alpha\hat r$, $|\vec A| = \alpha\epsilon$, kier. do peryhelium
+
+\section{Opór}
+$\dot v = v\frac{\text dv}{\text dx}$ \\
+$\vec F = -k\vec v$: $v_y = \left(v_{0y}+\frac{mg}{k}\right)e^{-kt/m} - \frac{mg}{k}$, $\ x = \frac{m v_{0x}}{k}\left(1-e^{-kt/m}\right)$ \\
+$y = \frac{m}{k}\left(v_{0y}+\frac{mg}{k}\right)\left(1-e^{-kt/m}\right) - \frac{mg}{k}t$ \\
+$F = -\alpha v^n$: $v^{1-n} = v_0^{1-n} - (1-n)\frac{\alpha}{m}t$, $\ v^{2-n} = v_0^{2-n} - (2-n)\frac{\alpha}{m}s$ \\
+$t_k = \frac{m v_0^{1-n}}{(1-n)\alpha}\ (n<1)$, $\ s_{max} = \frac{m v_0^{2-n}}{(2-n)\alpha}\ (n<2)$ \\
+$n=1$: $v=v_0e^{-\alpha t/m}$; $\ n=2$: $v=\frac{v_0}{1+\alpha v_0 t/m}$
 
 \section{Matma :/}
 \[
@@ -110,13 +131,13 @@ A\cos x + B\sin x = \sqrt{A^2+B^2}\,\cos(x-\delta), \qquad \tan\delta = \frac{B}
 $\cosh^2x - \sinh^2x = 1, \qquad \mathrm{arcosh}\,x = \ln\left(x+\sqrt{x^2-1}\right)$ \\
 $\vec a\times(\vec b\times\vec c) = \vec b(\vec a\cdot\vec c) - \vec c(\vec a\cdot\vec b), \qquad \vec\Omega\times(\vec\Omega\times\vec r) = -\Omega^2\vec r_\perp$
 
-\[
-\int\frac{dx}{\sqrt{a^2-x^2}} = \arcsin\frac{x}{a}, \qquad \int\frac{dx}{\sqrt{x^2\pm a^2}} = \ln\left|x+\sqrt{x^2\pm a^2}\right|, \qquad \int\frac{dx}{a^2+x^2} = \frac1a\arctan\frac{x}{a}
+\[ 
+\begin{gathered}    
+\int\frac{dx}{\sqrt{a^2-x^2}} = \arcsin\frac{x}{a} \\ \int\frac{dx}{\sqrt{x^2\pm a^2}} = \ln\left|x+\sqrt{x^2\pm a^2}\right| \\ \int\frac{dx}{a^2+x^2} = \frac1a\arctan\frac{x}{a} \end{gathered}
 \]
 
-\[(1+x)^n\approx 1+nx, \qquad \sin(\theta_0+\delta)\approx\sin\theta_0 + \delta\cos\theta_0\]
-$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
-     = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2}f''(x_0)(x-x_0)^2 + \dots$ \\
+\[f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+     = f(x_0) + f'(x_0)(x-x_0) + \frac{1}{2}f''(x_0)(x-x_0)^2 + \dots\] \\
 $V(x) \approx V(x_0) + \frac{1}{2}V''(x_0)(x-x_0)^2$ (w min.\ $V'(x_0)=0$), $\ \omega = \sqrt{V''(x_0)/m}$ \\
 $f(\vec r + \vec a) \approx f(\vec r) + \vec a \cdot \nabla f(\vec r)$ \\
 $(1+x)^n \approx 1 + nx + \frac{n(n-1)}{2}x^2$ \\
@@ -125,4 +146,7 @@ $e^x \approx 1 + x + \frac{x^2}{2}, \quad \ln(1+x) \approx x - \frac{x^2}{2}$ \\
 $\sinh x \approx x, \quad \cosh x \approx 1 + \frac{x^2}{2}$ \\
 $\sin(\theta_0+\delta) \approx \sin\theta_0 + \delta\cos\theta_0, \quad
  \cos(\theta_0+\delta) \approx \cos\theta_0 - \delta\sin\theta_0$
+\section{Stałe}
+$G = 6{,}67\cdot10^{-11}$, $R_Z = 6{,}37\cdot10^6$ m, $M_Z = 5{,}97\cdot10^{24}$ kg, $M_S = 1{,}99\cdot10^{30}$ kg, $M_K = 7{,}35\cdot10^{22}$ kg, $d_{ZS} = 1{,}5\cdot10^{11}$ m, $d_{ZK} = 3{,}84\cdot10^8$ m, $\Omega_Z = 7{,}29\cdot10^{-5}$ s$^{-1}$
+
 \end{document}
